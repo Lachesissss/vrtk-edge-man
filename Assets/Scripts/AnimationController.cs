@@ -157,4 +157,75 @@ public class AnimationController : MonoBehaviour
                 animator.SetBool("isWalking", false);
         }
     }
+
+    public void ApplyHandAnimation(ControllerInputManager.Hand HandID, ControllerInputManager.Button buttonID,bool pressed, bool touched)
+    {
+        Debug.Log(pressed.ToString() + ' ' + touched.ToString());
+        if (HandID == ControllerInputManager.Hand.Left)
+        {
+            if (buttonID == ControllerInputManager.Button.Trigger)
+            {
+                if (pressed)
+                {
+                    animator.SetFloat("Trigger_Left", 1f);
+                }
+                else if (touched)
+                {
+                    animator.SetFloat("Trigger_Left", 0.5f);
+                }
+                else
+                {
+                    animator.SetFloat("Trigger_Left", 0f);
+                }
+            }
+            if (buttonID == ControllerInputManager.Button.Grip)
+            {
+                if (pressed)
+                {
+                    animator.SetFloat("Grip_Left", 1f);
+                }
+                else if (touched)
+                {
+                    animator.SetFloat("Grip_Left", 0.5f);
+                }
+                else
+                {
+                    animator.SetFloat("Grip_Left", 0f);
+                }
+            }
+        }
+        if (HandID == ControllerInputManager.Hand.Right)
+        {
+            if (buttonID == ControllerInputManager.Button.Trigger)
+            {
+                if (pressed)
+                {
+                    animator.SetFloat("Trigger_Right", 1f);
+                }
+                else if (touched)
+                {
+                    animator.SetFloat("Trigger_Right", 0.5f);
+                }
+                else
+                {
+                    animator.SetFloat("Trigger_Right", 0f);
+                }
+            }
+            if (buttonID == ControllerInputManager.Button.Grip)
+            {
+                if (pressed)
+                {
+                    animator.SetFloat("Grip_Right", 1f);
+                }
+                else if (touched)
+                {
+                    animator.SetFloat("Grip_Right", 0.5f);
+                }
+                else
+                {
+                    animator.SetFloat("Grip_Right", 0f);
+                }
+            }
+        }
+    }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5189.257, g: 3343.3223, b: 2277.1992, a: 1}
+  m_IndirectSpecularColor: {r: 5189.249, g: 3343.2598, b: 2277.1914, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1945,7 +1945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071888990494953875, guid: 8ed0d7eb7a3d58e479e905c1e8b894a5, type: 3}
       propertyPath: VRButtonEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6071888990494953875, guid: 8ed0d7eb7a3d58e479e905c1e8b894a5, type: 3}
       propertyPath: VRAxisEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1970,7 +1970,7 @@ PrefabInstance:
     - target: {fileID: 6071888990494953875, guid: 8ed0d7eb7a3d58e479e905c1e8b894a5, type: 3}
       propertyPath: VRButtonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2712612850342542330}
     - target: {fileID: 6071888990494953875, guid: 8ed0d7eb7a3d58e479e905c1e8b894a5, type: 3}
       propertyPath: VRAxisEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -1993,7 +1993,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071888990494953875, guid: 8ed0d7eb7a3d58e479e905c1e8b894a5, type: 3}
       propertyPath: VRButtonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ApplyHandAnimation
       objectReference: {fileID: 0}
     - target: {fileID: 6071888990494953875, guid: 8ed0d7eb7a3d58e479e905c1e8b894a5, type: 3}
       propertyPath: VRAxisEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -2005,7 +2005,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6071888990494953875, guid: 8ed0d7eb7a3d58e479e905c1e8b894a5, type: 3}
       propertyPath: VRButtonEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: FusedVR.VRStreaming.VRTK.FusedVRBehaviourBooleanAction, Assembly-CSharp
+      value: AnimationController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6071888990494953875, guid: 8ed0d7eb7a3d58e479e905c1e8b894a5, type: 3}
       propertyPath: VRAxisEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
