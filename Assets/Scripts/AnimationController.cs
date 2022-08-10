@@ -136,8 +136,8 @@ public class AnimationController : MonoBehaviour
 
     public void ApplyData(ControllerInputManager.Hand id, ControllerInputManager.Button handID, float x, float y)
     {
-        float ThumbStickMoveXTemp = ThumbStickMoveX;
-        float ThumbStickMoveYTemp = ThumbStickMoveY;
+        //float ThumbStickMoveXTemp = ThumbStickMoveX;
+        //float ThumbStickMoveYTemp = ThumbStickMoveY;
         ThumbStickMoveX = x;
         ThumbStickMoveY = y;
         Debug.Log(ThumbStickMoveX.ToString()+' '+ThumbStickMoveY.ToString());
@@ -153,14 +153,14 @@ public class AnimationController : MonoBehaviour
         }
         else
         {
-            if(ThumbStickMoveYTemp == 0)
+            //if(ThumbStickMoveYTemp == 0)
                 animator.SetBool("isWalking", false);
         }
     }
 
     public void ApplyHandAnimation(ControllerInputManager.Hand HandID, ControllerInputManager.Button buttonID,bool pressed, bool touched)
     {
-        Debug.Log(pressed.ToString() + ' ' + touched.ToString());
+        //Debug.Log(pressed.ToString() + ' ' + touched.ToString());
         if (HandID == ControllerInputManager.Hand.Left)
         {
             if (buttonID == ControllerInputManager.Button.Trigger)
