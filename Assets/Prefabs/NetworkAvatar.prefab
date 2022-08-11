@@ -639,15 +639,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -6041776824271014634, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5999024051502561204, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5771114604411838234, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -2815138625794674269, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_RootBone
@@ -1551,7 +1551,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e2c01580d965915458b7a2eaff88e9f2, type: 2}
     - target: {fileID: 661321612203116036, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_Name
@@ -1567,7 +1567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1212215807541943017, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1550750965122779318, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_RootBone
@@ -3071,7 +3071,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 909792b9ef9efe44fa4721150285d9ea, type: 2}
     - target: {fileID: 3014363932722435531, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5222830288082238615, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_RootBone
@@ -3975,7 +3975,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a3bff1ed623685246bd88960561bd93e, type: 2}
     - target: {fileID: 9108194708119716771, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52da59e9fb56d994eb9f3912d7219f9c, type: 3}

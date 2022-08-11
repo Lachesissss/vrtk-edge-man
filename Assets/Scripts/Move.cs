@@ -15,7 +15,7 @@ public class Move : MonoBehaviour
     private float fallingSpeed;
     private CharacterController character;
     public float moveSpeed = 1f;
-
+    [SerializeField]  public float oculusHeightOffset;
     private Vector3 direction = Vector3.zero;
     [SerializeField] private Vector3 footOffset; //用于在编辑器里面手动调整一下脚步位置
 
@@ -24,6 +24,7 @@ public class Move : MonoBehaviour
     void Start()
     {
         character = GetComponent<CharacterController>();
+        
     }
 
     // Update is called once per frame
@@ -67,6 +68,13 @@ public class Move : MonoBehaviour
         }*/
         //Move方法需要自己写重力效果
         character.Move(direction * Time.fixedDeltaTime * moveSpeed);
+
+        //if (LocalAvatar.position.y< 0.017)
+        //{
+            //Debug.Log("y<0.017");
+            //character.Move(new Vector3(0f, oculusHeightOffset, 0f) * Time.fixedDeltaTime * moveSpeed);
+        //}
+            
 
         //gravity
         bool isGrounded = CheckIfGrounded();

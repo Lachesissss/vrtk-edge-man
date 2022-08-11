@@ -670,7 +670,7 @@ GameObject:
   - component: {fileID: 5862531623742236496}
   m_Layer: 0
   m_Name: GirlAvatar
-  m_TagString: LocalAvatar
+  m_TagString: NetworkAvatar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1926,7 +1926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509206450463690655}
   - component: {fileID: 4509206450463690652}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Renderer_Teeth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2199,7 +2199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509206450555619824}
   - component: {fileID: 4509206450555619825}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Renderer_Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2863,7 +2863,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509206450832134169}
   - component: {fileID: 4509206450832134166}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Renderer_EyeRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3412,7 +3412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509206451040984456}
   - component: {fileID: 4509206451040984457}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Renderer_Headwear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3623,7 +3623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4509206451152538353}
   - component: {fileID: 4509206451152538318}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Renderer_EyeLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}

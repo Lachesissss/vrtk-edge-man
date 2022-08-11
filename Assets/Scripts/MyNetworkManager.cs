@@ -13,9 +13,11 @@ public class MyNetworkManager : NetworkManager
     {
         // add player at correct spawn position
         Transform start = numPlayers == 0 ? leftPlayerSpawn : rightPlayerSpawn;
+        //GameObject player = Instantiate(playerPrefab, start.position, start.rotation);
+        //NetworkServer.AddPlayerForConnection(conn, player);
         
-
-        if(numPlayers == 0)
+        
+        if (numPlayers == 0)
         {
             GameObject player = Instantiate(player1, start.position, start.rotation);
             NetworkServer.AddPlayerForConnection(conn, player);
@@ -26,7 +28,7 @@ public class MyNetworkManager : NetworkManager
             NetworkServer.AddPlayerForConnection(conn, player);
         }
 
-        if (numPlayers == 2)
+        if (numPlayers == 1)
         {
             // spawn ball if two players
             item = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Object"));

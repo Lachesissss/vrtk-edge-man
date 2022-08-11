@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31b94e633688a294abc5410d3190b6f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameID: 123
+  gameID: 234
   maxConnections: 1
   playerPrefabs:
   - {fileID: 0}
