@@ -80,10 +80,12 @@ public class Move : MonoBehaviour
         bool isGrounded = CheckIfGrounded();
         if (isGrounded)
         {
+            Debug.Log("isGround");
             fallingSpeed = 0;
         }
         else
         {
+            Debug.Log("NotGround");
             fallingSpeed += gravity * Time.fixedDeltaTime;
         }
         character.Move(Vector3.up * fallingSpeed * Time.fixedDeltaTime);
@@ -93,6 +95,7 @@ public class Move : MonoBehaviour
     {
         Vector3 capsuleCenter = transform.InverseTransformPoint(transform.Find("Head").position);
         character.center = new Vector3(capsuleCenter.x, character.height/2 + character.skinWidth, capsuleCenter.z);
+        character.transform.position = transform.position;
     }
 
     bool CheckIfGrounded()
@@ -100,6 +103,7 @@ public class Move : MonoBehaviour
         Vector3 rayStart = transform.TransformPoint(character.center);
         float rayLength = character.center.y + 0.01f;
         bool hasHit = Physics.SphereCast(rayStart, character.radius, Vector3.down, out RaycastHit hitInfo, rayLength, groundLayer);
+        Debug.Log(hitInfo.point.ToString());
         return hasHit;
     }
 
