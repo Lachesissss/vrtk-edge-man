@@ -109,7 +109,7 @@ public class AnimationController : MonoBehaviour
     private void StopAnimation(InputAction.CallbackContext obj)
     {
         animator.SetBool("isWalking", false);
-        Debug.Log("False2");
+        //Debug.Log("False2");
         animator.SetFloat("animSpeed", 0);
     }
 
@@ -140,7 +140,7 @@ public class AnimationController : MonoBehaviour
         //float ThumbStickMoveYTemp = ThumbStickMoveY;
         ThumbStickMoveX = x;
         ThumbStickMoveY = y;
-        Debug.Log(ThumbStickMoveX.ToString()+' '+ThumbStickMoveY.ToString());
+        //Debug.Log(ThumbStickMoveX.ToString()+' '+ThumbStickMoveY.ToString());
         if (ThumbStickMoveY < 0)
         {
             animator.SetBool("isWalking", true);
