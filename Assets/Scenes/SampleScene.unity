@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5190.907, g: 3344.7188, b: 2277.8438, a: 1}
+  m_IndirectSpecularColor: {r: 5629.795, g: 3868.1133, b: 3148.4375, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2241,7 +2241,6 @@ MonoBehaviour:
   m_Script: {fileID: 2018073016}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Entries: []
 --- !u!4 &1077301964
 Transform:
   m_ObjectHideFlags: 19
@@ -2482,6 +2481,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   handType: 0
   handTrackingType: 12
+--- !u!95 &1254477887 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4190797018864092564, guid: b856165c2459d34479ab3d16c570d634, type: 3}
+  m_PrefabInstance: {fileID: 2712612850342542329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289306281
 GameObject:
   m_ObjectHideFlags: 0
@@ -3582,6 +3586,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4190797018864092561, guid: b856165c2459d34479ab3d16c570d634, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1254477887}
+    - target: {fileID: 4190797018864092562, guid: b856165c2459d34479ab3d16c570d634, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1254477887}
+    - target: {fileID: 4190797018864092564, guid: b856165c2459d34479ab3d16c570d634, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190797018864092564, guid: b856165c2459d34479ab3d16c570d634, type: 3}
+      propertyPath: m_CullingMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4190797018864092564, guid: b856165c2459d34479ab3d16c570d634, type: 3}
+      propertyPath: m_HasTransformHierarchy
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4190797018864092565, guid: b856165c2459d34479ab3d16c570d634, type: 3}
       propertyPath: m_RootOrder
       value: 14
