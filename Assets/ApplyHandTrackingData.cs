@@ -14,9 +14,8 @@ namespace FusedVR.VRStreaming
         {
             if (handType == handID && handTrackingType==boneID) //check if the data is from the correct source
             {
-                if (position.x == double.NaN || position.y == double.NaN || position.z == double.NaN || rotation.w == double.NaN || rotation.x == double.NaN)
-                    return;
-                transform.localPosition = new Vector3(position.x, position.y, -position.z); //note that z data is reversed on WebXR
+                //Debug.Log(handID.ToString() + ' ' + boneID.ToString());
+                transform.localPosition = new Vector3(position.x, position.y, -position.z);//note that z data is reversed on WebXR
                 transform.localRotation = rotation; //apply rotation - note coordinate system change was already applied
             }
         }
