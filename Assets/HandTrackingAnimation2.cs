@@ -76,7 +76,7 @@ public class HandTrackingAnimation2 : MonoBehaviour
     public void Start()
     {
         playerCoordinate = GameObject.FindGameObjectWithTag("camera").transform;
-        LeftHand = transform.Find("Armature/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHandModel");
+        LeftHand = transform.Find("Armature/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand");
         //RightHand = transform.Find("Armature/Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand");
         LeftHandThumb1 = LeftHand.transform.Find("thumb-metacarpal");
         LeftHandPos[0] = LeftHandThumb1.position;

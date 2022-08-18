@@ -5,13 +5,12 @@ using FusedVR.VRStreaming;
 
 public class HandTrackingAnimation : MonoBehaviour
 {
-    [SerializeField] public Vector3 LeftHandPosOffset;
-    [SerializeField] public Vector3 RightHandPosOffset;
-    [SerializeField] public Quaternion HandRotOffset;
     public Vector3[] LeftHandPos = new Vector3[25];
     public Vector3[] RightHandPos = new Vector3[25];
     public Quaternion[] LeftHandRot = new Quaternion[25];
     public Quaternion[] RightHandRot = new Quaternion[25];
+    public Transform LeftHandCtrl;
+    public Transform RightHandCtrl;
     private Transform LeftHand;
     private Transform RightHand;
     private Transform LeftHandThumb1;
@@ -57,7 +56,7 @@ public class HandTrackingAnimation : MonoBehaviour
     private Transform RightHandPinky4;
     private Transform playerCoordinate;
     private bool handTrackingReady = false;
-    
+
 
     public void UpdateHandTrackingMsg(VRInputManager.Source handID, VRInputManager.HandTrackingSource boneID, Vector3 position, Quaternion rotation)
     {
@@ -67,14 +66,14 @@ public class HandTrackingAnimation : MonoBehaviour
             LeftHandPos[(int)boneID] = new Vector3(position.x, position.y, -position.z);
             LeftHandRot[(int)boneID] = rotation;
         }
-        else
+        else if((handID == VRInputManager.Source.Right))
         {
             handTrackingReady = true;
             RightHandPos[(int)boneID] = new Vector3(position.x, position.y, -position.z);
             RightHandRot[(int)boneID] = rotation;
         }
     }
-    
+
     public void Start()
     {
         playerCoordinate = GameObject.FindGameObjectWithTag("camera").transform;
@@ -218,99 +217,104 @@ public class HandTrackingAnimation : MonoBehaviour
         {
             Vector3 playerPos = playerCoordinate.position;
             Quaternion playerRot = playerCoordinate.rotation;
-            LeftHandThumb1.localPosition = LeftHandThumb1.parent.InverseTransformPoint(LeftHandPos[0] + playerPos) + LeftHandPosOffset;
+            
+            LeftHandThumb1.parent.transform.position = LeftHandCtrl.position;
+            LeftHandThumb1.parent.transform.rotation = LeftHandCtrl.rotation;
+            RightHandThumb1.parent.transform.position = RightHandCtrl.position;
+            RightHandThumb1.parent.transform.rotation = RightHandCtrl.rotation;
+            LeftHandThumb1.localPosition = LeftHandThumb1.parent.InverseTransformPoint(LeftHandPos[0] + playerPos);//¿®∫≈¿Ôºı»• LeftHandThumb1.parent
             Debug.Log(LeftHandThumb1.parent.transform.position.ToString() + ' ' + LeftHandPos[0].ToString());
-            LeftHandThumb1.localRotation = Quaternion.Inverse(LeftHandThumb1.parent.transform.rotation) * LeftHandRot[0] * playerRot * HandRotOffset;
-            LeftHandThumb2.localPosition = LeftHandThumb2.parent.InverseTransformPoint(LeftHandPos[1] + playerPos) + LeftHandPosOffset;
-            LeftHandThumb2.localRotation = Quaternion.Inverse(LeftHandThumb2.parent.transform.rotation) * LeftHandRot[1] * playerRot * HandRotOffset;
-            LeftHandThumb3.localPosition = LeftHandThumb3.parent.InverseTransformPoint(LeftHandPos[2] + playerPos) + LeftHandPosOffset;
-            LeftHandThumb3.localRotation = Quaternion.Inverse(LeftHandThumb3.parent.transform.rotation) * LeftHandRot[2] * playerRot * HandRotOffset;
-            LeftHandThumb4.localPosition = LeftHandThumb4.parent.InverseTransformPoint(LeftHandPos[3] + playerPos) + LeftHandPosOffset;
-            LeftHandThumb4.localRotation = Quaternion.Inverse(LeftHandThumb4.parent.transform.rotation) * LeftHandRot[3] * playerRot * HandRotOffset;
+            LeftHandThumb1.localRotation = LeftHandRot[0] * Quaternion.Inverse(playerRot * LeftHandThumb1.parent.transform.rotation);
+            LeftHandThumb2.localPosition = LeftHandThumb2.parent.InverseTransformPoint(LeftHandPos[1] + playerPos);
+            LeftHandThumb2.localRotation = LeftHandRot[1] * Quaternion.Inverse(playerRot * LeftHandThumb2.parent.transform.rotation);
+            LeftHandThumb3.localPosition = LeftHandThumb3.parent.InverseTransformPoint(LeftHandPos[2] + playerPos);
+            LeftHandThumb3.localRotation = LeftHandRot[2] * Quaternion.Inverse(playerRot * LeftHandThumb3.parent.transform.rotation);
+            LeftHandThumb4.localPosition = LeftHandThumb4.parent.InverseTransformPoint(LeftHandPos[3] + playerPos);
+            LeftHandThumb4.localRotation = LeftHandRot[3] * Quaternion.Inverse(playerRot * LeftHandThumb4.parent.transform.rotation);
 
-            LeftHandIndex1.localPosition = LeftHandIndex1.parent.InverseTransformPoint(LeftHandPos[5] + playerPos) + LeftHandPosOffset;
-            LeftHandIndex1.localRotation = Quaternion.Inverse(LeftHandIndex1.parent.transform.rotation) * LeftHandRot[5] * playerRot * HandRotOffset;
-            LeftHandIndex2.localPosition = LeftHandIndex2.parent.InverseTransformPoint(LeftHandPos[6] + playerPos) + LeftHandPosOffset;
-            LeftHandIndex2.localRotation = Quaternion.Inverse(LeftHandIndex2.parent.transform.rotation) * LeftHandRot[6] * playerRot * HandRotOffset;
-            LeftHandIndex3.localPosition = LeftHandIndex3.parent.InverseTransformPoint(LeftHandPos[7] + playerPos) + LeftHandPosOffset;
-            LeftHandIndex3.localRotation = Quaternion.Inverse(LeftHandIndex3.parent.transform.rotation) * LeftHandRot[7] * playerRot * HandRotOffset;
-            LeftHandIndex4.localPosition = LeftHandIndex4.parent.InverseTransformPoint(LeftHandPos[8] + playerPos) + LeftHandPosOffset;
-            LeftHandIndex4.localRotation = Quaternion.Inverse(LeftHandIndex4.parent.transform.rotation) * LeftHandRot[8] * playerRot * HandRotOffset;
+            LeftHandIndex1.localPosition = LeftHandIndex1.parent.InverseTransformPoint(LeftHandPos[5] + playerPos);
+            LeftHandIndex1.localRotation = LeftHandRot[5] * Quaternion.Inverse(playerRot * LeftHandIndex1.parent.transform.rotation);
+            LeftHandIndex2.localPosition = LeftHandIndex2.parent.InverseTransformPoint(LeftHandPos[6] + playerPos);
+            LeftHandIndex2.localRotation = LeftHandRot[6] * Quaternion.Inverse(playerRot * LeftHandIndex2.parent.transform.rotation);
+            LeftHandIndex3.localPosition = LeftHandIndex3.parent.InverseTransformPoint(LeftHandPos[7] + playerPos);
+            LeftHandIndex3.localRotation = LeftHandRot[7] * Quaternion.Inverse(playerRot * LeftHandIndex3.parent.transform.rotation);
+            LeftHandIndex4.localPosition = LeftHandIndex4.parent.InverseTransformPoint(LeftHandPos[8] + playerPos);
+            LeftHandIndex4.localRotation = LeftHandRot[8] * Quaternion.Inverse(playerRot * LeftHandIndex4.parent.transform.rotation);
 
-            LeftHandMiddle1.localPosition = LeftHandMiddle1.parent.InverseTransformPoint(LeftHandPos[10] + playerPos) + LeftHandPosOffset;
-            LeftHandMiddle1.localRotation = Quaternion.Inverse(LeftHandMiddle1.parent.transform.rotation) * LeftHandRot[10] * playerRot * HandRotOffset;
-            LeftHandMiddle2.localPosition = LeftHandMiddle2.parent.InverseTransformPoint(LeftHandPos[11] + playerPos) + LeftHandPosOffset;
-            LeftHandMiddle2.localRotation = Quaternion.Inverse(LeftHandMiddle2.parent.transform.rotation) * LeftHandRot[11] * playerRot * HandRotOffset;
-            LeftHandMiddle3.localPosition = LeftHandMiddle3.parent.InverseTransformPoint(LeftHandPos[12] + playerPos) + LeftHandPosOffset;
-            LeftHandMiddle3.localRotation = Quaternion.Inverse(LeftHandMiddle3.parent.transform.rotation) * LeftHandRot[12] * playerRot * HandRotOffset;
-            LeftHandMiddle4.localPosition = LeftHandMiddle4.parent.InverseTransformPoint(LeftHandPos[13] + playerPos) + LeftHandPosOffset;
-            LeftHandMiddle4.localRotation = Quaternion.Inverse(LeftHandMiddle4.parent.transform.rotation) * LeftHandRot[13] * playerRot * HandRotOffset;
+            LeftHandMiddle1.localPosition = LeftHandMiddle1.parent.InverseTransformPoint(LeftHandPos[10] + playerPos);
+            LeftHandMiddle1.localRotation = LeftHandRot[10] * Quaternion.Inverse(playerRot * LeftHandMiddle1.parent.transform.rotation);
+            LeftHandMiddle2.localPosition = LeftHandMiddle2.parent.InverseTransformPoint(LeftHandPos[11] + playerPos);
+            LeftHandMiddle2.localRotation = LeftHandRot[11] * Quaternion.Inverse(playerRot * LeftHandMiddle2.parent.transform.rotation);
+            LeftHandMiddle3.localPosition = LeftHandMiddle3.parent.InverseTransformPoint(LeftHandPos[12] + playerPos);
+            LeftHandMiddle3.localRotation = LeftHandRot[12] * Quaternion.Inverse(playerRot * LeftHandMiddle3.parent.transform.rotation);
+            LeftHandMiddle4.localPosition = LeftHandMiddle4.parent.InverseTransformPoint(LeftHandPos[13] + playerPos);
+            LeftHandMiddle4.localRotation = LeftHandRot[13] * Quaternion.Inverse(playerRot * LeftHandMiddle4.parent.transform.rotation);
 
-            LeftHandRing1.localPosition = LeftHandRing1.parent.InverseTransformPoint(LeftHandPos[15] + playerPos) + LeftHandPosOffset;
-            LeftHandRing1.localRotation = Quaternion.Inverse(LeftHandRing1.parent.transform.rotation) * LeftHandRot[15] * playerRot * HandRotOffset;
-            LeftHandRing2.localPosition = LeftHandRing2.parent.InverseTransformPoint(LeftHandPos[16] + playerPos) + LeftHandPosOffset;
-            LeftHandRing2.localRotation = Quaternion.Inverse(LeftHandRing2.parent.transform.rotation) * LeftHandRot[16] * playerRot * HandRotOffset;
-            LeftHandRing3.localPosition = LeftHandRing3.parent.InverseTransformPoint(LeftHandPos[17] + playerPos) + LeftHandPosOffset;
-            LeftHandRing3.localRotation = Quaternion.Inverse(LeftHandRing3.parent.transform.rotation) * LeftHandRot[17] * playerRot * HandRotOffset;
-            LeftHandRing4.localPosition = LeftHandRing4.parent.InverseTransformPoint(LeftHandPos[18] + playerPos) + LeftHandPosOffset;
-            LeftHandRing4.localRotation = Quaternion.Inverse(LeftHandRing4.parent.transform.rotation) * LeftHandRot[18] * playerRot * HandRotOffset;
+            LeftHandRing1.localPosition = LeftHandRing1.parent.InverseTransformPoint(LeftHandPos[15] + playerPos);
+            LeftHandRing1.localRotation = LeftHandRot[15] * Quaternion.Inverse(playerRot * LeftHandRing1.parent.transform.rotation);
+            LeftHandRing2.localPosition = LeftHandRing2.parent.InverseTransformPoint(LeftHandPos[16] + playerPos);
+            LeftHandRing2.localRotation = LeftHandRot[16] * Quaternion.Inverse(playerRot * LeftHandRing2.parent.transform.rotation);
+            LeftHandRing3.localPosition = LeftHandRing3.parent.InverseTransformPoint(LeftHandPos[17] + playerPos);
+            LeftHandRing3.localRotation = LeftHandRot[17] * Quaternion.Inverse(playerRot * LeftHandRing3.parent.transform.rotation);
+            LeftHandRing4.localPosition = LeftHandRing4.parent.InverseTransformPoint(LeftHandPos[18] + playerPos);
+            LeftHandRing4.localRotation = LeftHandRot[18] * Quaternion.Inverse(playerRot * LeftHandRing4.parent.transform.rotation);
 
-            LeftHandPinky1.localPosition = LeftHandPinky1.parent.InverseTransformPoint(LeftHandPos[20] + playerPos) + LeftHandPosOffset;
-            LeftHandPinky1.localRotation = Quaternion.Inverse(LeftHandPinky1.parent.transform.rotation) * LeftHandRot[20] * playerRot * HandRotOffset;
-            LeftHandPinky2.localPosition = LeftHandPinky2.parent.InverseTransformPoint(LeftHandPos[21] + playerPos) + LeftHandPosOffset;
-            LeftHandPinky2.localRotation = Quaternion.Inverse(LeftHandPinky2.parent.transform.rotation) * LeftHandRot[21] * playerRot * HandRotOffset;
-            LeftHandPinky3.localPosition = LeftHandPinky3.parent.InverseTransformPoint(LeftHandPos[22] + playerPos) + LeftHandPosOffset;
-            LeftHandPinky3.localRotation = Quaternion.Inverse(LeftHandPinky3.parent.transform.rotation) * LeftHandRot[22] * playerRot * HandRotOffset;
-            LeftHandPinky4.localPosition = LeftHandPinky4.parent.InverseTransformPoint(LeftHandPos[23] + playerPos) + LeftHandPosOffset;
-            LeftHandPinky4.localRotation = Quaternion.Inverse(LeftHandPinky4.parent.transform.rotation) * LeftHandRot[23] * playerRot * HandRotOffset;
+            LeftHandPinky1.localPosition = LeftHandPinky1.parent.InverseTransformPoint(LeftHandPos[20] + playerPos);
+            LeftHandPinky1.localRotation = LeftHandRot[20] * Quaternion.Inverse(playerRot * LeftHandPinky1.parent.transform.rotation);
+            LeftHandPinky2.localPosition = LeftHandPinky2.parent.InverseTransformPoint(LeftHandPos[21] + playerPos);
+            LeftHandPinky2.localRotation = LeftHandRot[21] * Quaternion.Inverse(playerRot * LeftHandPinky2.parent.transform.rotation);
+            LeftHandPinky3.localPosition = LeftHandPinky3.parent.InverseTransformPoint(LeftHandPos[22] + playerPos);
+            LeftHandPinky3.localRotation = LeftHandRot[22] * Quaternion.Inverse(LeftHandPinky3.parent.transform.rotation);
+            LeftHandPinky4.localPosition = LeftHandPinky4.parent.InverseTransformPoint(playerRot * LeftHandPos[23] + playerPos);
+            LeftHandPinky4.localRotation = LeftHandRot[23] * Quaternion.Inverse(playerRot * LeftHandPinky4.parent.transform.rotation);
 
 
-            RightHandThumb1.localPosition = RightHandThumb1.parent.InverseTransformPoint(RightHandPos[0] + playerPos) + RightHandPosOffset;
-            RightHandThumb1.localRotation = Quaternion.Inverse(RightHandThumb1.parent.transform.rotation) * RightHandRot[0] * playerRot * HandRotOffset;
-            RightHandThumb2.localPosition = RightHandThumb2.parent.InverseTransformPoint(RightHandPos[1] + playerPos) + RightHandPosOffset;
-            RightHandThumb2.localRotation = Quaternion.Inverse(RightHandThumb2.parent.transform.rotation) * RightHandRot[1] * playerRot * HandRotOffset;
-            RightHandThumb3.localPosition = RightHandThumb3.parent.InverseTransformPoint(RightHandPos[2] + playerPos) + RightHandPosOffset;
-            RightHandThumb3.localRotation = Quaternion.Inverse(RightHandThumb3.parent.transform.rotation) * RightHandRot[2] * playerRot * HandRotOffset;
-            RightHandThumb4.localPosition = RightHandThumb4.parent.InverseTransformPoint(RightHandPos[3] + playerPos) + RightHandPosOffset;
-            RightHandThumb4.localRotation = Quaternion.Inverse(RightHandThumb4.parent.transform.rotation) * RightHandRot[3] * playerRot * HandRotOffset;
+            RightHandThumb1.localPosition = RightHandThumb1.parent.InverseTransformPoint(RightHandPos[0] + playerPos);
+            RightHandThumb1.localRotation = Quaternion.Inverse(RightHandThumb1.parent.transform.rotation) * RightHandRot[0] * playerRot;
+            RightHandThumb2.localPosition = RightHandThumb2.parent.InverseTransformPoint(RightHandPos[1] + playerPos);
+            RightHandThumb2.localRotation = Quaternion.Inverse(RightHandThumb2.parent.transform.rotation) * RightHandRot[1] * playerRot;
+            RightHandThumb3.localPosition = RightHandThumb3.parent.InverseTransformPoint(RightHandPos[2] + playerPos);
+            RightHandThumb3.localRotation = Quaternion.Inverse(RightHandThumb3.parent.transform.rotation) * RightHandRot[2] * playerRot;
+            RightHandThumb4.localPosition = RightHandThumb4.parent.InverseTransformPoint(RightHandPos[3] + playerPos);
+            RightHandThumb4.localRotation = Quaternion.Inverse(RightHandThumb4.parent.transform.rotation) * RightHandRot[3] * playerRot;
 
-            RightHandIndex1.localPosition = RightHandIndex1.parent.InverseTransformPoint(RightHandPos[5] + playerPos) + RightHandPosOffset;
-            RightHandIndex1.localRotation = Quaternion.Inverse(RightHandIndex1.parent.transform.rotation) * RightHandRot[5] * playerRot * HandRotOffset;
-            RightHandIndex2.localPosition = RightHandIndex2.parent.InverseTransformPoint(RightHandPos[6] + playerPos) + RightHandPosOffset;
-            RightHandIndex2.localRotation = Quaternion.Inverse(RightHandIndex2.parent.transform.rotation) * RightHandRot[6] * playerRot * HandRotOffset;
-            RightHandIndex3.localPosition = RightHandIndex3.parent.InverseTransformPoint(RightHandPos[7] + playerPos) + RightHandPosOffset;
-            RightHandIndex3.localRotation = Quaternion.Inverse(RightHandIndex3.parent.transform.rotation) * RightHandRot[7] * playerRot * HandRotOffset;
-            RightHandIndex4.localPosition = RightHandIndex4.parent.InverseTransformPoint(RightHandPos[8] + playerPos) + RightHandPosOffset;
-            RightHandIndex4.localRotation = Quaternion.Inverse(RightHandIndex4.parent.transform.rotation) * RightHandRot[8] * playerRot * HandRotOffset;
+            RightHandIndex1.localPosition = RightHandIndex1.parent.InverseTransformPoint(RightHandPos[5] + playerPos);
+            RightHandIndex1.localRotation = Quaternion.Inverse(RightHandIndex1.parent.transform.rotation) * RightHandRot[5] * playerRot;
+            RightHandIndex2.localPosition = RightHandIndex2.parent.InverseTransformPoint(RightHandPos[6] + playerPos);
+            RightHandIndex2.localRotation = Quaternion.Inverse(RightHandIndex2.parent.transform.rotation) * RightHandRot[6] * playerRot;
+            RightHandIndex3.localPosition = RightHandIndex3.parent.InverseTransformPoint(RightHandPos[7] + playerPos);
+            RightHandIndex3.localRotation = Quaternion.Inverse(RightHandIndex3.parent.transform.rotation) * RightHandRot[7] * playerRot;
+            RightHandIndex4.localPosition = RightHandIndex4.parent.InverseTransformPoint(RightHandPos[8] + playerPos);
+            RightHandIndex4.localRotation = Quaternion.Inverse(RightHandIndex4.parent.transform.rotation) * RightHandRot[8] * playerRot;
 
-            RightHandMiddle1.localPosition = RightHandMiddle1.parent.InverseTransformPoint(RightHandPos[10] + playerPos) + RightHandPosOffset;
-            RightHandMiddle1.localRotation = Quaternion.Inverse(RightHandMiddle1.parent.transform.rotation) * RightHandRot[10] * playerRot * HandRotOffset;
-            RightHandMiddle2.localPosition = RightHandMiddle2.parent.InverseTransformPoint(RightHandPos[11] + playerPos) + RightHandPosOffset;
-            RightHandMiddle2.localRotation = Quaternion.Inverse(RightHandMiddle2.parent.transform.rotation) * RightHandRot[11] * playerRot * HandRotOffset;
-            RightHandMiddle3.localPosition = RightHandMiddle3.parent.InverseTransformPoint(RightHandPos[12] + playerPos) + RightHandPosOffset;
-            RightHandMiddle3.localRotation = Quaternion.Inverse(RightHandMiddle3.parent.transform.rotation) * RightHandRot[12] * playerRot * HandRotOffset;
-            RightHandMiddle4.localPosition = RightHandMiddle4.parent.InverseTransformPoint(RightHandPos[13] + playerPos) + RightHandPosOffset;
-            RightHandMiddle4.localRotation = Quaternion.Inverse(RightHandMiddle4.parent.transform.rotation) * RightHandRot[13] * playerRot * HandRotOffset;
+            RightHandMiddle1.localPosition = RightHandMiddle1.parent.InverseTransformPoint(RightHandPos[10] + playerPos);
+            RightHandMiddle1.localRotation = Quaternion.Inverse(RightHandMiddle1.parent.transform.rotation) * RightHandRot[10] * playerRot;
+            RightHandMiddle2.localPosition = RightHandMiddle2.parent.InverseTransformPoint(RightHandPos[11] + playerPos);
+            RightHandMiddle2.localRotation = Quaternion.Inverse(RightHandMiddle2.parent.transform.rotation) * RightHandRot[11] * playerRot;
+            RightHandMiddle3.localPosition = RightHandMiddle3.parent.InverseTransformPoint(RightHandPos[12] + playerPos);
+            RightHandMiddle3.localRotation = Quaternion.Inverse(RightHandMiddle3.parent.transform.rotation) * RightHandRot[12] * playerRot;
+            RightHandMiddle4.localPosition = RightHandMiddle4.parent.InverseTransformPoint(RightHandPos[13] + playerPos);
+            RightHandMiddle4.localRotation = Quaternion.Inverse(RightHandMiddle4.parent.transform.rotation) * RightHandRot[13] * playerRot;
 
-            RightHandRing1.localPosition = RightHandRing1.parent.InverseTransformPoint(RightHandPos[15] + playerPos) + RightHandPosOffset;
-            RightHandRing1.localRotation = Quaternion.Inverse(RightHandRing1.parent.transform.rotation) * RightHandRot[15] * playerRot * HandRotOffset;
-            RightHandRing2.localPosition = RightHandRing2.parent.InverseTransformPoint(RightHandPos[16] + playerPos) + RightHandPosOffset;
-            RightHandRing2.localRotation = Quaternion.Inverse(RightHandRing2.parent.transform.rotation) * RightHandRot[16] * playerRot * HandRotOffset;
-            RightHandRing3.localPosition = RightHandRing3.parent.InverseTransformPoint(RightHandPos[17] + playerPos) + RightHandPosOffset;
-            RightHandRing3.localRotation = Quaternion.Inverse(RightHandRing3.parent.transform.rotation) * RightHandRot[17] * playerRot * HandRotOffset;
-            RightHandRing4.localPosition = RightHandRing4.parent.InverseTransformPoint(RightHandPos[18] + playerPos) + RightHandPosOffset;
-            RightHandRing4.localRotation = Quaternion.Inverse(RightHandRing4.parent.transform.rotation) * RightHandRot[18] * playerRot * HandRotOffset;
+            RightHandRing1.localPosition = RightHandRing1.parent.InverseTransformPoint(RightHandPos[15] + playerPos);
+            RightHandRing1.localRotation = Quaternion.Inverse(RightHandRing1.parent.transform.rotation) * RightHandRot[15] * playerRot;
+            RightHandRing2.localPosition = RightHandRing2.parent.InverseTransformPoint(RightHandPos[16] + playerPos);
+            RightHandRing2.localRotation = Quaternion.Inverse(RightHandRing2.parent.transform.rotation) * RightHandRot[16] * playerRot;
+            RightHandRing3.localPosition = RightHandRing3.parent.InverseTransformPoint(RightHandPos[17] + playerPos);
+            RightHandRing3.localRotation = Quaternion.Inverse(RightHandRing3.parent.transform.rotation) * RightHandRot[17] * playerRot;
+            RightHandRing4.localPosition = RightHandRing4.parent.InverseTransformPoint(RightHandPos[18] + playerPos);
+            RightHandRing4.localRotation = Quaternion.Inverse(RightHandRing4.parent.transform.rotation) * RightHandRot[18] * playerRot;
 
-            RightHandPinky1.localPosition = RightHandPinky1.parent.InverseTransformPoint(RightHandPos[20] + playerPos) + RightHandPosOffset;
-            RightHandPinky1.localRotation = Quaternion.Inverse(RightHandPinky1.parent.transform.rotation) * RightHandRot[20] * playerRot * HandRotOffset;
-            RightHandPinky2.localPosition = RightHandPinky2.parent.InverseTransformPoint(RightHandPos[21] + playerPos) + RightHandPosOffset;
-            RightHandPinky2.localRotation = Quaternion.Inverse(RightHandPinky2.parent.transform.rotation) * RightHandRot[21] * playerRot * HandRotOffset;
-            RightHandPinky3.localPosition = RightHandPinky3.parent.InverseTransformPoint(RightHandPos[22] + playerPos) + RightHandPosOffset;
-            RightHandPinky3.localRotation = Quaternion.Inverse(RightHandPinky3.parent.transform.rotation) * RightHandRot[22] * playerRot * HandRotOffset;
-            RightHandPinky4.localPosition = RightHandPinky4.parent.InverseTransformPoint(RightHandPos[23] + playerPos) + RightHandPosOffset;
-            RightHandPinky4.localRotation = Quaternion.Inverse(RightHandPinky4.parent.transform.rotation) * RightHandRot[23] * playerRot * HandRotOffset;
+            RightHandPinky1.localPosition = RightHandPinky1.parent.InverseTransformPoint(RightHandPos[20] + playerPos);
+            RightHandPinky1.localRotation = Quaternion.Inverse(RightHandPinky1.parent.transform.rotation) * RightHandRot[20] * playerRot;
+            RightHandPinky2.localPosition = RightHandPinky2.parent.InverseTransformPoint(RightHandPos[21] + playerPos);
+            RightHandPinky2.localRotation = Quaternion.Inverse(RightHandPinky2.parent.transform.rotation) * RightHandRot[21] * playerRot;
+            RightHandPinky3.localPosition = RightHandPinky3.parent.InverseTransformPoint(RightHandPos[22] + playerPos);
+            RightHandPinky3.localRotation = Quaternion.Inverse(RightHandPinky3.parent.transform.rotation) * RightHandRot[22] * playerRot;
+            RightHandPinky4.localPosition = RightHandPinky4.parent.InverseTransformPoint(RightHandPos[23] + playerPos);
+            RightHandPinky4.localRotation = Quaternion.Inverse(RightHandPinky4.parent.transform.rotation) * RightHandRot[23] * playerRot;
         }
-        
+
     }
 
 }
