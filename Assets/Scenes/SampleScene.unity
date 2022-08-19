@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5190.1475, g: 3344.2012, b: 2277.629, a: 1}
+  m_IndirectSpecularColor: {r: 5628.908, g: 3867.6094, b: 3127.125, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -641,9 +641,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   value: 0
-  inputManager: {fileID: 2759557842735642756}
+  controllerinputManager: {fileID: 2759557842735642756}
   myHand: 1
   myButton: 3
+  myHandTrackingBoolEventType: 0
 --- !u!1 &97172540
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,9 +1069,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   value: 0
-  inputManager: {fileID: 2759557842735642756}
+  controllerinputManager: {fileID: 2759557842735642756}
   myHand: 0
   myButton: 0
+  myHandTrackingBoolEventType: 0
 --- !u!1 &297953287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1473,9 +1475,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   value: 0
-  inputManager: {fileID: 2759557842735642756}
+  controllerinputManager: {fileID: 2759557842735642756}
   myHand: 1
   myButton: 1
+  myHandTrackingBoolEventType: 0
 --- !u!4 &494481620
 Transform:
   m_ObjectHideFlags: 0
@@ -2560,9 +2563,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   value: 0
-  inputManager: {fileID: 2759557842735642756}
+  controllerinputManager: {fileID: 2759557842735642756}
   myHand: 0
   myButton: 3
+  myHandTrackingBoolEventType: 0
 --- !u!1001 &910835513
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2691,9 +2695,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   value: 0
-  inputManager: {fileID: 2759557842735642756}
+  controllerinputManager: {fileID: 2759557842735642756}
   myHand: 0
   myButton: 1
+  myHandTrackingBoolEventType: 0
 --- !u!1 &959758626
 GameObject:
   m_ObjectHideFlags: 0
@@ -2886,9 +2891,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   value: 0
-  inputManager: {fileID: 2759557842735642756}
+  controllerinputManager: {fileID: 2759557842735642756}
   myHand: 1
   myButton: 0
+  myHandTrackingBoolEventType: 0
 --- !u!1 &1044766798 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1731117224835046649, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
@@ -4234,9 +4240,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   value: 0
-  inputManager: {fileID: 2759557842735642756}
+  controllerinputManager: {fileID: 2759557842735642756}
   myHand: 0
   myButton: 2
+  myHandTrackingBoolEventType: 0
 --- !u!1 &1687427364 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1731117226029910583, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
@@ -4729,9 +4736,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   value: 0
-  inputManager: {fileID: 2759557842735642756}
+  controllerinputManager: {fileID: 2759557842735642756}
   myHand: 1
   myButton: 2
+  myHandTrackingBoolEventType: 0
 --- !u!1 &1896299779 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1458957959020712, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
@@ -5348,6 +5356,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  VRHandTrackingBoolEvent:
+    m_PersistentCalls:
+      m_Calls: []
   VRAxisEvent:
     m_PersistentCalls:
       m_Calls:
@@ -5406,7 +5417,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  VRHandTrackingEvent:
+  VRJointsPose:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1366539651}
@@ -5633,7 +5644,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7874183890441871158}
-  - component: {fileID: 5525933166684334252}
   m_Layer: 0
   m_Name: LeftHand
   m_TagString: LeftHand
@@ -5641,20 +5651,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5525933166684334252
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5525933166684334251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c5905d9313c13469dfadeca0ad098d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handType: 1
-  handTrackingType: 24
 --- !u!114 &6948070296399345823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5728,7 +5724,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9153055571298861890}
-  - component: {fileID: 7953822028629753265}
   m_Layer: 0
   m_Name: RightHand
   m_TagString: RightHand
@@ -5736,20 +5731,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &7953822028629753265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7953822028629753264}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91c5905d9313c13469dfadeca0ad098d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  handType: 2
-  handTrackingType: 24
 --- !u!114 &8216894354475198746
 MonoBehaviour:
   m_ObjectHideFlags: 0

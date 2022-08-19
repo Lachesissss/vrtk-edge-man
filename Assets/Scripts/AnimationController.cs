@@ -18,7 +18,7 @@ public class AnimationController : MonoBehaviour
     public float ThumbStickMoveX = 0f;
     public float ThumbStickMoveY = 0f;
 
-    private bool StartLeftTrigger=false;
+    private bool StartLeftTrigger = false;
     private bool StartRightTrigger = false;
     private bool StartLeftGrip = false;
     private bool StartRightGrip = false;
@@ -96,7 +96,7 @@ public class AnimationController : MonoBehaviour
         bool isMovingForward = ThumbStickMoveY < 0;
         if (isMovingForward)
         {
-            animator.SetBool("isWalking",true);
+            animator.SetBool("isWalking", true);
             animator.SetFloat("animSpeed", 1);
         }
         else
@@ -154,11 +154,13 @@ public class AnimationController : MonoBehaviour
         else
         {
             //if(ThumbStickMoveYTemp == 0)
-                animator.SetBool("isWalking", false);
+            animator.SetBool("isWalking", false);
         }
     }
 
-    public void ApplyHandAnimation(ControllerInputManager.Hand HandID, ControllerInputManager.Button buttonID,bool pressed, bool touched)
+
+
+    public void ApplyHandAnimation(ControllerInputManager.Hand HandID, ControllerInputManager.Button buttonID, bool pressed, bool touched)
     {
         //Debug.Log(pressed.ToString() + ' ' + touched.ToString());
         if (HandID == ControllerInputManager.Hand.Left)

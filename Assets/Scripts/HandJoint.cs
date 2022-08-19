@@ -32,7 +32,6 @@ public class HandJoint : MonoBehaviour
         //transform.rotation *= handRotDelta;
         if (isThird)
         {
-            Debug.Log("Third!!!!!");
             transform.rotation = transform.parent.rotation;
         }
 
