@@ -7,15 +7,15 @@ using FusedVR.VRStreaming;
 
 public class Move : MonoBehaviour
 {
-    public float ThumbStickMoveX=0f;
-    public float ThumbStickMoveY=0f;
+    public float ThumbStickMoveX = 0f;
+    public float ThumbStickMoveY = 0f;
     public Transform LocalAvatar;
     public LayerMask groundLayer;
     public float gravity = -9.81f;
     private float fallingSpeed;
     private CharacterController character;
     public float moveSpeed = 1f;
-    [SerializeField]  public float oculusHeightOffset;
+    [SerializeField] public float oculusHeightOffset;
     private Vector3 direction = Vector3.zero;
     [SerializeField] private Vector3 footOffset; //用于在编辑器里面手动调整一下脚步位置
 
@@ -24,7 +24,7 @@ public class Move : MonoBehaviour
     void Start()
     {
         character = GetComponent<CharacterController>();
-        
+
     }
 
     // Update is called once per frame
@@ -38,7 +38,7 @@ public class Move : MonoBehaviour
 
     private void Update()
     {
-        
+
     }
     private void FixedUpdate()
     {
@@ -71,10 +71,10 @@ public class Move : MonoBehaviour
 
         //if (LocalAvatar.position.y< 0.017)
         //{
-            //Debug.Log("y<0.017");
-            //character.Move(new Vector3(0f, oculusHeightOffset, 0f) * Time.fixedDeltaTime * moveSpeed);
+        //Debug.Log("y<0.017");
+        //character.Move(new Vector3(0f, oculusHeightOffset, 0f) * Time.fixedDeltaTime * moveSpeed);
         //}
-            
+
 
         //gravity
         bool isGrounded = CheckIfGrounded();
@@ -94,7 +94,7 @@ public class Move : MonoBehaviour
     void CapsuleFollowHeadSet()
     {
         Vector3 capsuleCenter = transform.InverseTransformPoint(transform.Find("Head").position);
-        character.center = new Vector3(capsuleCenter.x, character.height/2 + character.skinWidth, capsuleCenter.z);
+        character.center = new Vector3(capsuleCenter.x, character.height / 2 + character.skinWidth, capsuleCenter.z);
         character.transform.position = transform.position;
     }
 

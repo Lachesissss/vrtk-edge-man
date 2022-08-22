@@ -10,53 +10,16 @@ public class HandTrackingAnimation : MonoBehaviour
     public Vector3[] RightHandPos = new Vector3[JOINTS_NUM + 1];
     public Quaternion[] LeftHandRot = new Quaternion[JOINTS_NUM + 1];
     public Quaternion[] RightHandRot = new Quaternion[JOINTS_NUM + 1];
+    public Vector3[] RelativeLeftHandPos = new Vector3[JOINTS_NUM];
+    public Vector3[] RelativeRightHandPos = new Vector3[JOINTS_NUM];
+    public Vector3[] RelativeLeftHandAngle = new Vector3[JOINTS_NUM];
+    public Vector3[] RelativeRightHandAngle = new Vector3[JOINTS_NUM];
     private HandJoint[] LeftHandJoints = new HandJoint[JOINTS_NUM];
     private HandJoint[] RightHandJoints = new HandJoint[JOINTS_NUM];
     public Transform LeftHandCtrl;
     public Transform RightHandCtrl;
     private Transform LeftHand;
     private Transform RightHand;
-    private Transform LeftHandThumb1;
-    private Transform LeftHandThumb2;
-    private Transform LeftHandThumb3;
-    private Transform LeftHandThumb4;
-    private Transform LeftHandIndex1;
-    private Transform LeftHandIndex2;
-    private Transform LeftHandIndex3;
-    private Transform LeftHandIndex4;
-    private Transform LeftHandMiddle1;
-    private Transform LeftHandMiddle2;
-    private Transform LeftHandMiddle3;
-    private Transform LeftHandMiddle4;
-    private Transform LeftHandRing1;
-    private Transform LeftHandRing2;
-    private Transform LeftHandRing3;
-    private Transform LeftHandRing4;
-    private Transform LeftHandPinky1;
-    private Transform LeftHandPinky2;
-    private Transform LeftHandPinky3;
-    private Transform LeftHandPinky4;
-
-    private Transform RightHandThumb1;
-    private Transform RightHandThumb2;
-    private Transform RightHandThumb3;
-    private Transform RightHandThumb4;
-    private Transform RightHandIndex1;
-    private Transform RightHandIndex2;
-    private Transform RightHandIndex3;
-    private Transform RightHandIndex4;
-    private Transform RightHandMiddle1;
-    private Transform RightHandMiddle2;
-    private Transform RightHandMiddle3;
-    private Transform RightHandMiddle4;
-    private Transform RightHandRing1;
-    private Transform RightHandRing2;
-    private Transform RightHandRing3;
-    private Transform RightHandRing4;
-    private Transform RightHandPinky1;
-    private Transform RightHandPinky2;
-    private Transform RightHandPinky3;
-    private Transform RightHandPinky4;
     private Transform playerCoordinate;
     private bool handTrackingReady = false;
 
@@ -130,6 +93,24 @@ public class HandTrackingAnimation : MonoBehaviour
     {
         if (handTrackingReady)
         {
+            /*
+            for (int i = 0; i < 20; i++)
+            {
+                if (i % 4 == 0)
+                {
+                    RelativeLeftHandPos[i] = LeftHandPos[i] - LeftHandPos[JOINTS_NUM];
+                    RelativeLeftHandAngle[i] = LeftHandRot[i].eulerAngles - LeftHandRot[JOINTS_NUM].eulerAngles;
+                    RelativeRightHandPos[i] = RightHandPos[i] - RightHandPos[JOINTS_NUM];
+                    RelativeRightHandAngle[i] = RightHandRot[i].eulerAngles - RightHandRot[JOINTS_NUM].eulerAngles;
+                }
+                else
+                {
+                    RelativeLeftHandPos[i] = LeftHandPos[i] - LeftHandPos[i - 1];
+                    RelativeLeftHandAngle[i] = LeftHandRot[i].eulerAngles - LeftHandRot[i - 1].eulerAngles;
+                    RelativeRightHandPos[i] = RightHandPos[i] - RightHandPos[JOINTS_NUM];
+                    RelativeRightHandAngle[i] = RightHandRot[i].eulerAngles - RightHandRot[i - 1].eulerAngles;
+                }
+            }*/
             Vector3 playerPos = playerCoordinate.position;
             Quaternion playerRot = playerCoordinate.rotation;
             LeftHandCtrl.localPosition = LeftHandPos[20];
@@ -137,35 +118,17 @@ public class HandTrackingAnimation : MonoBehaviour
             RightHandCtrl.localPosition = RightHandPos[20];
             RightHandCtrl.localRotation = RightHandRot[20];
             Vector3 LeftHandDelta = LeftHandJoints[0].GetTransform().parent.transform.position - LeftHandCtrl.position;
-            Quaternion LeftHandRotDelta = LeftHandJoints[0].GetTransform().parent.transform.rotation * Quaternion.Inverse(LeftHandCtrl.rotation);
+            //Quaternion LeftHandRotDelta = LeftHandJoints[0].GetTransform().parent.transform.rotation * Quaternion.Inverse(LeftHandCtrl.rotation);
             Vector3 RightHandDelta = RightHandJoints[0].GetTransform().parent.transform.position - RightHandCtrl.position; ;
-            Quaternion RightHandRotDelta = RightHandJoints[0].GetTransform().parent.transform.rotation * Quaternion.Inverse(RightHandCtrl.rotation);
-            int start = 2;
+            //Quaternion RightHandRotDelta = RightHandJoints[0].GetTransform().parent.transform.rotation * Quaternion.Inverse(RightHandCtrl.rotation);
             for (int i = 0; i < 20; i++)
             {
-                if (i == start)
-                {
-                    start += 4;
-                    LeftHandJoints[i].UpdateRelativeTransfrom(LeftHandPos[i], LeftHandRot[i], playerPos, playerRot, LeftHandDelta, LeftHandRotDelta, true);
-                }
-                else
-                {
-                    LeftHandJoints[i].UpdateRelativeTransfrom(LeftHandPos[i], LeftHandRot[i], playerPos, playerRot, LeftHandDelta, LeftHandRotDelta, false);
-                }
-
+                LeftHandJoints[i].UpdateRelativeTransfrom(LeftHandPos[i], LeftHandPos[i + 1], playerPos, LeftHandDelta);
             }
-            start = 2;
+
             for (int i = 0; i < 20; i++)
             {
-                if (i == start)
-                {
-                    start += 4;
-                    RightHandJoints[i].UpdateRelativeTransfrom(RightHandPos[i], RightHandRot[i], playerPos, playerRot, RightHandDelta, RightHandRotDelta, true);
-                }
-                else
-                {
-                    RightHandJoints[i].UpdateRelativeTransfrom(RightHandPos[i], RightHandRot[i], playerPos, playerRot, RightHandDelta, RightHandRotDelta, false);
-                }
+                RightHandJoints[i].UpdateRelativeTransfrom(RightHandPos[i], RightHandPos[i + 1], playerPos, RightHandDelta);
             }
         }
 
