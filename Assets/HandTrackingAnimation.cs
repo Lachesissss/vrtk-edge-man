@@ -18,6 +18,8 @@ public class HandTrackingAnimation : MonoBehaviour
     private HandJoint[] RightHandJoints = new HandJoint[JOINTS_NUM];
     public Transform LeftHandCtrl;
     public Transform RightHandCtrl;
+    public Transform IKLeftHand;
+    public Transform IKRightHand;
     private Transform LeftHand;
     private Transform RightHand;
     private Transform playerCoordinate;
@@ -93,39 +95,24 @@ public class HandTrackingAnimation : MonoBehaviour
     {
         if (handTrackingReady)
         {
-            /*
-            for (int i = 0; i < 20; i++)
-            {
-                if (i % 4 == 0)
-                {
-                    RelativeLeftHandPos[i] = LeftHandPos[i] - LeftHandPos[JOINTS_NUM];
-                    RelativeLeftHandAngle[i] = LeftHandRot[i].eulerAngles - LeftHandRot[JOINTS_NUM].eulerAngles;
-                    RelativeRightHandPos[i] = RightHandPos[i] - RightHandPos[JOINTS_NUM];
-                    RelativeRightHandAngle[i] = RightHandRot[i].eulerAngles - RightHandRot[JOINTS_NUM].eulerAngles;
-                }
-                else
-                {
-                    RelativeLeftHandPos[i] = LeftHandPos[i] - LeftHandPos[i - 1];
-                    RelativeLeftHandAngle[i] = LeftHandRot[i].eulerAngles - LeftHandRot[i - 1].eulerAngles;
-                    RelativeRightHandPos[i] = RightHandPos[i] - RightHandPos[JOINTS_NUM];
-                    RelativeRightHandAngle[i] = RightHandRot[i].eulerAngles - RightHandRot[i - 1].eulerAngles;
-                }
-            }*/
             Vector3 playerPos = playerCoordinate.position;
             Quaternion playerRot = playerCoordinate.rotation;
             LeftHandCtrl.localPosition = LeftHandPos[20];
             LeftHandCtrl.localRotation = LeftHandRot[20];
             RightHandCtrl.localPosition = RightHandPos[20];
             RightHandCtrl.localRotation = RightHandRot[20];
-            Vector3 LeftHandDelta = LeftHandJoints[0].GetTransform().parent.transform.position - LeftHandCtrl.position;
+            //Vector3 LeftHandDelta = LeftHandJoints[0].GetTransform().parent.transform.position - LeftHandCtrl.position;
             Vector3 LeftHandHorizon = LeftHandPos[4] - LeftHandPos[16];
             Vector3 RightHandHorizon = RightHandPos[4] - RightHandPos[16];
-            Vector3 RightHandDelta = RightHandJoints[0].GetTransform().parent.transform.position - RightHandCtrl.position; ;
+            //Vector3 RightHandDelta = RightHandJoints[0].GetTransform().parent.transform.position - RightHandCtrl.position; 
 
-            //LeftHandCtrl.position += LeftHandDelta;
-            //LeftHandCtrl.localRotation = LeftHandRot[20];
-            //RightHandCtrl.position += RightHandDelta;
-            //RightHandCtrl.localRotation = RightHandRot[20];
+
+
+            LeftHandJoints[0].GetTransform().parent.transform.position = LeftHandCtrl.position;
+            IKLeftHand.position = LeftHandJoints[0].GetTransform().parent.transform.position;
+            RightHandJoints[0].GetTransform().parent.transform.position = RightHandCtrl.position;
+            IKRightHand.position = RightHandJoints[0].GetTransform().parent.transform.position;
+
             Vector3 LeftWristToMiddle = LeftHandPos[8] - LeftHandPos[20];
             Vector3 RightWristToMiddle = RightHandPos[8] - RightHandPos[20];
             Vector3 LeftWristForward = Vector3.Cross(LeftHandHorizon, LeftWristToMiddle);
@@ -134,19 +121,37 @@ public class HandTrackingAnimation : MonoBehaviour
             LeftHand.rotation = rotation1;
             Quaternion rotation2 = Quaternion.LookRotation(RightWristForward, RightHand.up);
             RightHand.rotation = rotation2;
-            //Vector3 forward = Vector3.Cross(transform.right, deltaPos);
-            //Quaternion rotation = Quaternion.LookRotation(forward, deltaPos);
-            //LeftHand.rotation = rotation;
+
+            if (Vector3.Dot(LeftHandJoints[0].GetTransform().parent.parent.forward, LeftHand.forward) < 0) //之前有个胳臂肘在某些情况下会旋转180度的bug，这里面向bug编程一下
+            {
+                Vector3 posTemp = LeftHandJoints[0].GetTransform().parent.position;
+                Quaternion rotTemp = LeftHandJoints[0].GetTransform().parent.rotation;
+                Quaternion rotation3 = Quaternion.LookRotation(-LeftHandJoints[0].GetTransform().parent.parent.forward, LeftHandJoints[0].GetTransform().parent.parent.up);
+                LeftHandJoints[0].GetTransform().parent.parent.rotation = rotation3;
+                LeftHandJoints[0].GetTransform().parent.position = posTemp;
+                LeftHandJoints[0].GetTransform().parent.rotation = rotTemp;
+            }
+
+            if (Vector3.Dot(RightHandJoints[0].GetTransform().parent.parent.forward, RightHand.forward) < 0) //
+            {
+                Vector3 posTemp = RightHandJoints[0].GetTransform().parent.position;
+                Quaternion rotTemp = RightHandJoints[0].GetTransform().parent.rotation;
+                Quaternion rotation3 = Quaternion.LookRotation(-RightHandJoints[0].GetTransform().parent.parent.forward, RightHandJoints[0].GetTransform().parent.parent.up);
+                RightHandJoints[0].GetTransform().parent.parent.rotation = rotation3;
+                RightHandJoints[0].GetTransform().parent.position = posTemp;
+                RightHandJoints[0].GetTransform().parent.rotation = rotTemp;
+            }
+
 
             for (int i = 0; i < 20; i++)
             {
                 if (i != 0)
                 {
-                    LeftHandJoints[i].UpdateRelativeTransfrom(LeftHandPos[i], LeftHandPos[i + 1], LeftHandPos[i - 1], LeftHandHorizon, playerPos, playerRot, LeftHandDelta, true);
+                    LeftHandJoints[i].UpdateRelativeTransfrom(LeftHandPos[i], LeftHandPos[i + 1], LeftHandPos[i - 1], LeftHandHorizon, playerPos, playerRot, true);
                 }
                 else
                 {
-                    LeftHandJoints[i].UpdateRelativeTransfrom(LeftHandPos[i], LeftHandPos[i + 1], LeftHandPos[i], LeftHandHorizon, playerPos, playerRot, LeftHandDelta, true);
+                    LeftHandJoints[i].UpdateRelativeTransfrom(LeftHandPos[i], LeftHandPos[i + 1], LeftHandPos[i], LeftHandHorizon, playerPos, playerRot, true);
                 }
 
             }
@@ -155,11 +160,11 @@ public class HandTrackingAnimation : MonoBehaviour
             {
                 if (i != 0)
                 {
-                    RightHandJoints[i].UpdateRelativeTransfrom(RightHandPos[i], RightHandPos[i + 1], LeftHandPos[i - 1], RightHandHorizon, playerPos, playerRot, RightHandDelta, false);
+                    RightHandJoints[i].UpdateRelativeTransfrom(RightHandPos[i], RightHandPos[i + 1], LeftHandPos[i - 1], RightHandHorizon, playerPos, playerRot, false);
                 }
                 else
                 {
-                    RightHandJoints[i].UpdateRelativeTransfrom(RightHandPos[i], RightHandPos[i + 1], LeftHandPos[i], RightHandHorizon, playerPos, playerRot, RightHandDelta, false);
+                    RightHandJoints[i].UpdateRelativeTransfrom(RightHandPos[i], RightHandPos[i + 1], LeftHandPos[i], RightHandHorizon, playerPos, playerRot, false);
                 }
             }
         }

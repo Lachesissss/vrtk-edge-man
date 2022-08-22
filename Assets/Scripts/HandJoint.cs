@@ -24,9 +24,9 @@ public class HandJoint : MonoBehaviour
         return transform;
     }
 
-    public void UpdateRelativeTransfrom(Vector3 jointOriginPos, Vector3 ChildjointOriginPos, Vector3 ParentJointOriginPos, Vector3 Horizon, Vector3 playerPos, Quaternion playerRot, Vector3 handPosDelta, bool isLeft)
+    public void UpdateRelativeTransfrom(Vector3 jointOriginPos, Vector3 ChildjointOriginPos, Vector3 ParentJointOriginPos, Vector3 Horizon, Vector3 playerPos, Quaternion playerRot, bool isLeft)
     {
-        transform.localPosition = transform.parent.InverseTransformPoint(jointOriginPos + playerPos + handPosDelta);
+        transform.localPosition = transform.parent.InverseTransformPoint(jointOriginPos + playerPos);
 
         if (isLeft)
         {
