@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 5190.1787, g: 3344.2324, b: 2277.664, a: 1}
+  m_IndirectSpecularColor: {r: 5190.1475, g: 3344.2012, b: 2277.629, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5108,6 +5108,34 @@ PrefabInstance:
     - target: {fileID: 1731117225686191294, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731117225710828360, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.40943682
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731117225710828360, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.15622368
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731117225710828360, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.8601504
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731117225710828360, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.26095408
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731117225710828360, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 35.229
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731117225710828360, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -130.318
+      objectReference: {fileID: 0}
+    - target: {fileID: 1731117225710828360, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -3.865
       objectReference: {fileID: 0}
     - target: {fileID: 2463075777801668908, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
       propertyPath: LeftHandCtrl
