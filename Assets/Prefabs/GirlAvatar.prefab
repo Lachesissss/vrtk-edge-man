@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449504138913}
+  - component: {fileID: 3852004530411343187}
   m_Layer: 0
   m_Name: LeftHandThumb3
   m_TagString: Untagged
@@ -62,6 +63,18 @@ Transform:
   m_Father: {fileID: 4509206450052350000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3852004530411343187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449504138912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449523214298
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,6 +84,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449523214299}
+  - component: {fileID: 1451122382597437647}
   m_Layer: 0
   m_Name: LeftHandRing4
   m_TagString: Untagged
@@ -92,6 +106,18 @@ Transform:
   m_Father: {fileID: 4509206450506470899}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1451122382597437647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449523214298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449566917853
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +127,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449566917850}
+  - component: {fileID: 5007473549016392070}
   m_Layer: 0
   m_Name: LeftHandMiddle1
   m_TagString: Untagged
@@ -123,6 +150,18 @@ Transform:
   m_Father: {fileID: 4509206450945118170}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5007473549016392070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449566917853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449579322291
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449579322288}
+  - component: {fileID: 544352028151518385}
   m_Layer: 0
   m_Name: LeftHandIndex2
   m_TagString: Untagged
@@ -154,6 +194,18 @@ Transform:
   m_Father: {fileID: 4509206450359328153}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &544352028151518385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449579322291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449597957276
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449597957277}
+  - component: {fileID: 4711111234383330541}
   m_Layer: 0
   m_Name: RightHandRing4
   m_TagString: Untagged
@@ -184,6 +237,18 @@ Transform:
   m_Father: {fileID: 4509206449984184381}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4711111234383330541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449597957276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449621786979
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,6 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449621786976}
+  - component: {fileID: 2833311092417913002}
   m_Layer: 0
   m_Name: LeftHandIndex4
   m_TagString: Untagged
@@ -214,6 +280,18 @@ Transform:
   m_Father: {fileID: 4509206450043211911}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2833311092417913002
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449621786979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449636004170
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449636004171}
+  - component: {fileID: 6321696649808882934}
   m_Layer: 0
   m_Name: LeftHandMiddle2
   m_TagString: Untagged
@@ -245,6 +324,18 @@ Transform:
   m_Father: {fileID: 4509206449566917850}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6321696649808882934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449636004170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449653079338
 GameObject:
   m_ObjectHideFlags: 0
@@ -285,6 +376,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449665681544}
+  - component: {fileID: 4178047770081103959}
   m_Layer: 0
   m_Name: RightHandPinky3
   m_TagString: Untagged
@@ -307,6 +399,18 @@ Transform:
   m_Father: {fileID: 4509206450214818738}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4178047770081103959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449665681547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449748537969
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,6 +420,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449748537934}
+  - component: {fileID: 8045905874092172516}
   m_Layer: 0
   m_Name: RightHandMiddle1
   m_TagString: Untagged
@@ -338,6 +443,18 @@ Transform:
   m_Father: {fileID: 4509206450089465568}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8045905874092172516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449748537969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449760139653
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449760139650}
+  - component: {fileID: 6558852353770059600}
   m_Layer: 0
   m_Name: RightHandPinky1
   m_TagString: Untagged
@@ -369,6 +487,18 @@ Transform:
   m_Father: {fileID: 4509206450089465568}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6558852353770059600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449760139653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449806271889
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,6 +689,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449850838351}
+  - component: {fileID: 4977205367191698365}
   m_Layer: 0
   m_Name: RightHandIndex2
   m_TagString: Untagged
@@ -581,6 +712,18 @@ Transform:
   m_Father: {fileID: 4509206451171328507}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4977205367191698365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449850838350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449853222873
 GameObject:
   m_ObjectHideFlags: 0
@@ -733,12 +876,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  AvatarTransform: {fileID: 4509206449891082773}
-  IKHead: {fileID: 4509206449946542962}
-  IKLeftTarget: {fileID: 4509206451113275346}
-  IKRightTarget: {fileID: 4509206450103205333}
-  IKLeftFoot: {fileID: 4509206449853222870}
-  IKRightFoot: {fileID: 4509206451102710793}
+  NetworkAvatarTransform: {fileID: 4509206449891082773}
+  NetworkIKHead: {fileID: 4509206449946542962}
+  NetworkIKLeftTarget: {fileID: 4509206451113275346}
+  NetworkIKRightTarget: {fileID: 4509206450103205333}
+  NetworkIKLeftFoot: {fileID: 4509206449853222870}
+  NetworkIKRightFoot: {fileID: 4509206451102710793}
   NetworkAnimator: {fileID: 4509206449891082772}
 --- !u!114 &8046608248446767832
 MonoBehaviour:
@@ -1158,6 +1301,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449916802531}
+  - component: {fileID: 5841086628789539288}
   m_Layer: 0
   m_Name: RightHandIndex4
   m_TagString: Untagged
@@ -1179,6 +1323,18 @@ Transform:
   m_Father: {fileID: 4509206451500942071}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5841086628789539288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449916802530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449924685965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1344,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449924685962}
+  - component: {fileID: 1893446091307296970}
   m_Layer: 0
   m_Name: RightHandThumb1
   m_TagString: Untagged
@@ -1210,6 +1367,18 @@ Transform:
   m_Father: {fileID: 4509206450089465568}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1893446091307296970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449924685965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449946542965
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,6 +1472,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206449984184381}
+  - component: {fileID: 2585005000648995270}
   m_Layer: 0
   m_Name: RightHandRing3
   m_TagString: Untagged
@@ -1325,6 +1495,18 @@ Transform:
   m_Father: {fileID: 4509206450289422098}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2585005000648995270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206449984184380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206449986721097
 GameObject:
   m_ObjectHideFlags: 0
@@ -1364,6 +1546,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450018083174}
+  - component: {fileID: 8441752590800792416}
   m_Layer: 0
   m_Name: LeftHandThumb1
   m_TagString: Untagged
@@ -1386,6 +1569,18 @@ Transform:
   m_Father: {fileID: 4509206450945118170}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8441752590800792416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450018083177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450021515637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1425,6 +1620,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450043211911}
+  - component: {fileID: 3482549236583545450}
   m_Layer: 0
   m_Name: LeftHandIndex3
   m_TagString: Untagged
@@ -1447,6 +1643,18 @@ Transform:
   m_Father: {fileID: 4509206449579322288}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3482549236583545450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450043211910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450052350003
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,6 +1664,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450052350000}
+  - component: {fileID: 7033180269042731756}
   m_Layer: 0
   m_Name: LeftHandThumb2
   m_TagString: Untagged
@@ -1478,6 +1687,18 @@ Transform:
   m_Father: {fileID: 4509206450018083174}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7033180269042731756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450052350003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450089465571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,6 +1804,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450166852660}
+  - component: {fileID: 4670900625862235978}
   m_Layer: 0
   m_Name: LeftHandPinky2
   m_TagString: Untagged
@@ -1605,6 +1827,18 @@ Transform:
   m_Father: {fileID: 4509206450578065019}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4670900625862235978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450166852663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450175404154
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,6 +1879,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450212277236}
+  - component: {fileID: 8542002267729219757}
   m_Layer: 0
   m_Name: RightHandThumb3
   m_TagString: Untagged
@@ -1667,6 +1902,18 @@ Transform:
   m_Father: {fileID: 4509206451168254984}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8542002267729219757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450212277239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450214818741
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1923,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450214818738}
+  - component: {fileID: 6939717590231264977}
   m_Layer: 0
   m_Name: RightHandPinky2
   m_TagString: Untagged
@@ -1698,6 +1946,18 @@ Transform:
   m_Father: {fileID: 4509206449760139650}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6939717590231264977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450214818741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450236695760
 GameObject:
   m_ObjectHideFlags: 0
@@ -1740,6 +2000,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450289422098}
+  - component: {fileID: 6851957973440210329}
   m_Layer: 0
   m_Name: RightHandRing2
   m_TagString: Untagged
@@ -1762,6 +2023,18 @@ Transform:
   m_Father: {fileID: 4509206451526027452}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6851957973440210329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450289422101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450301023216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1771,6 +2044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450301023217}
+  - component: {fileID: 4080523573949201422}
   m_Layer: 0
   m_Name: RightHandMiddle4
   m_TagString: Untagged
@@ -1792,6 +2066,18 @@ Transform:
   m_Father: {fileID: 4509206450458105913}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4080523573949201422
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450301023216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450359328152
 GameObject:
   m_ObjectHideFlags: 0
@@ -1801,6 +2087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450359328153}
+  - component: {fileID: 6813673740308357437}
   m_Layer: 0
   m_Name: LeftHandIndex1
   m_TagString: Untagged
@@ -1823,6 +2110,18 @@ Transform:
   m_Father: {fileID: 4509206450945118170}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6813673740308357437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450359328152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450390253062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1894,6 +2193,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450458105913}
+  - component: {fileID: 6447829696257330237}
   m_Layer: 0
   m_Name: RightHandMiddle3
   m_TagString: Untagged
@@ -1916,6 +2216,18 @@ Transform:
   m_Father: {fileID: 4509206450633712799}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6447829696257330237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450458105912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450463690654
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450506470899}
+  - component: {fileID: 5365805723140472606}
   m_Layer: 0
   m_Name: LeftHandRing3
   m_TagString: Untagged
@@ -2128,6 +2441,18 @@ Transform:
   m_Father: {fileID: 4509206451240518391}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5365805723140472606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450506470898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450507066529
 GameObject:
   m_ObjectHideFlags: 0
@@ -2407,6 +2732,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450578065019}
+  - component: {fileID: 3390560219739097406}
   m_Layer: 0
   m_Name: LeftHandPinky1
   m_TagString: Untagged
@@ -2429,6 +2755,18 @@ Transform:
   m_Father: {fileID: 4509206450945118170}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3390560219739097406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450578065018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450609947051
 GameObject:
   m_ObjectHideFlags: 0
@@ -2588,6 +2926,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450633712799}
+  - component: {fileID: 6771024125937606374}
   m_Layer: 0
   m_Name: RightHandMiddle2
   m_TagString: Untagged
@@ -2610,6 +2949,18 @@ Transform:
   m_Father: {fileID: 4509206449748537934}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6771024125937606374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450633712798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450645799132
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,6 +3001,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450699090350}
+  - component: {fileID: 1204485455006937282}
   m_Layer: 0
   m_Name: RightHandPinky4
   m_TagString: Untagged
@@ -2671,6 +3023,18 @@ Transform:
   m_Father: {fileID: 4509206449665681544}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204485455006937282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450699090257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450710645868
 GameObject:
   m_ObjectHideFlags: 0
@@ -2680,6 +3044,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450710645869}
+  - component: {fileID: 2610070305584479322}
   m_Layer: 0
   m_Name: RightHandThumb4
   m_TagString: Untagged
@@ -2701,6 +3066,18 @@ Transform:
   m_Father: {fileID: 4509206450212277236}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2610070305584479322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450710645868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450738503151
 GameObject:
   m_ObjectHideFlags: 0
@@ -2710,6 +3087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450738503148}
+  - component: {fileID: 8805768220311128358}
   m_Layer: 0
   m_Name: LeftHandMiddle4
   m_TagString: Untagged
@@ -2731,6 +3109,18 @@ Transform:
   m_Father: {fileID: 4509206451192950290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8805768220311128358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450738503151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450750822196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +3130,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450750822197}
+  - component: {fileID: 7737284429332903962}
   m_Layer: 0
   m_Name: LeftHandPinky3
   m_TagString: Untagged
@@ -2762,6 +3153,18 @@ Transform:
   m_Father: {fileID: 4509206450166852660}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7737284429332903962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450750822196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450754711224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2832,6 +3235,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450817929811}
+  - component: {fileID: 213619664366250912}
   m_Layer: 0
   m_Name: LeftHandPinky4
   m_TagString: Untagged
@@ -2853,6 +3257,18 @@ Transform:
   m_Father: {fileID: 4509206450750822197}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &213619664366250912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450817929810}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450832134168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3109,6 +3525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206450958437846}
+  - component: {fileID: 4130782027047384630}
   m_Layer: 0
   m_Name: LeftHandRing1
   m_TagString: Untagged
@@ -3131,6 +3548,18 @@ Transform:
   m_Father: {fileID: 4509206450945118170}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4130782027047384630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206450958437849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206450972721590
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3779,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206451014708455}
+  - component: {fileID: 1905290411105732928}
   m_Layer: 0
   m_Name: LeftHandThumb4
   m_TagString: Untagged
@@ -3371,6 +3801,18 @@ Transform:
   m_Father: {fileID: 4509206449504138913}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1905290411105732928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206451014708454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206451022996548
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,6 +4214,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206451168254984}
+  - component: {fileID: 2023736343117996786}
   m_Layer: 0
   m_Name: RightHandThumb2
   m_TagString: Untagged
@@ -3794,6 +4237,18 @@ Transform:
   m_Father: {fileID: 4509206449924685962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2023736343117996786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206451168254987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206451169534411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3836,6 +4291,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206451171328507}
+  - component: {fileID: 1675769830090751029}
   m_Layer: 0
   m_Name: RightHandIndex1
   m_TagString: Untagged
@@ -3858,6 +4314,18 @@ Transform:
   m_Father: {fileID: 4509206450089465568}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1675769830090751029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206451171328506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206451192950293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3867,6 +4335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206451192950290}
+  - component: {fileID: 4619690179415597929}
   m_Layer: 0
   m_Name: LeftHandMiddle3
   m_TagString: Untagged
@@ -3889,6 +4358,18 @@ Transform:
   m_Father: {fileID: 4509206449636004171}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4619690179415597929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206451192950293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206451240518390
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,6 +4379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206451240518391}
+  - component: {fileID: 9127377408572525358}
   m_Layer: 0
   m_Name: LeftHandRing2
   m_TagString: Untagged
@@ -3920,6 +4402,18 @@ Transform:
   m_Father: {fileID: 4509206450958437846}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9127377408572525358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206451240518390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206451317973949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,6 +4513,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206451500942071}
+  - component: {fileID: 2757403666572100975}
   m_Layer: 0
   m_Name: RightHandIndex3
   m_TagString: Untagged
@@ -4041,6 +4536,18 @@ Transform:
   m_Father: {fileID: 4509206449850838351}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2757403666572100975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206451500942070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206451526027455
 GameObject:
   m_ObjectHideFlags: 0
@@ -4050,6 +4557,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4509206451526027452}
+  - component: {fileID: 3023761968478334362}
   m_Layer: 0
   m_Name: RightHandRing1
   m_TagString: Untagged
@@ -4072,6 +4580,18 @@ Transform:
   m_Father: {fileID: 4509206450089465568}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3023761968478334362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4509206451526027455}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 283a4097d6e562e4cbe649eac6cd97c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4509206451574698809
 GameObject:
   m_ObjectHideFlags: 0

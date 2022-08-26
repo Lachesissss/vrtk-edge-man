@@ -2382,12 +2382,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncMode: 0
   syncInterval: 0.1
-  AvatarTransform: {fileID: 4310199720118990321}
-  IKHead: {fileID: 6054817679549918107}
-  IKLeftTarget: {fileID: 6073438911033110754}
-  IKRightTarget: {fileID: 6821836260990892107}
-  IKLeftFoot: {fileID: 7670990779868275534}
-  IKRightFoot: {fileID: 4998208706054865542}
+  NetworkAvatarTransform: {fileID: 4310199720118990321}
+  NetworkIKHead: {fileID: 6054817679549918107}
+  NetworkIKLeftTarget: {fileID: 6073438911033110754}
+  NetworkIKRightTarget: {fileID: 6821836260990892107}
+  NetworkIKLeftFoot: {fileID: 7670990779868275534}
+  NetworkIKRightFoot: {fileID: 4998208706054865542}
   NetworkAnimator: {fileID: 4379983739517730589}
 --- !u!114 &3833495609593342001
 MonoBehaviour:
