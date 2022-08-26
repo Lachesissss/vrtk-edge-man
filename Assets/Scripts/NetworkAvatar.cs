@@ -7,7 +7,6 @@ using UnityEngine.XR;
 
 public class NetworkAvatar : NetworkBehaviour
 {
-    const int JOINTS_NUM = 20;
     public Transform AvatarTransform;
     public Transform IKHead;
     public Transform IKLeftTarget;
@@ -22,10 +21,6 @@ public class NetworkAvatar : NetworkBehaviour
     private Transform LocalIKRightTarget;
     private Transform LocalIKLeftFoot;
     private Transform LocalIKRightFoot;
-    private HandJoint[] LocalLeftHandJoints = new HandJoint[JOINTS_NUM];
-    private HandJoint[] LocalRightHandJoints = new HandJoint[JOINTS_NUM];
-    private HandJoint[] NetworkLeftHandJoints = new HandJoint[JOINTS_NUM];
-    private HandJoint[] NetworkRightHandJoints = new HandJoint[JOINTS_NUM];
     private Animator LocalAnimator;
     private GameObject LocalAvatar;
 
@@ -55,64 +50,6 @@ public class NetworkAvatar : NetworkBehaviour
         NetworkAnimator = this.GetComponent<Animator>();
         LocalAnimator = LocalAvatar.GetComponent<Animator>();
 
-
-        Transform currentLeft = LocalIKLeftTarget;
-        for (int i = 0; i < 5; i++)
-        {
-            currentLeft = LocalIKLeftTarget.GetChild(i);
-            LocalLeftHandJoints[i * 4] = currentLeft.GetComponent<HandJoint>();
-            for (int j = 1; j < 4; j++)
-            {
-                currentLeft = currentLeft.GetChild(0);
-                int num = i * 4 + j;
-                LocalLeftHandJoints[num] = currentLeft.GetComponent<HandJoint>();
-            }
-
-        }
-        Transform currentRight = LocalIKRightTarget;
-        for (int i = 0; i < 5; i++)
-        {
-            currentRight = LocalIKRightTarget.GetChild(i);
-            LocalRightHandJoints[i * 4] = currentRight.GetComponent<HandJoint>();
-            for (int j = 1; j < 4; j++)
-            {
-                currentRight = currentRight.GetChild(0);
-                int num = i * 4 + j;
-                LocalRightHandJoints[num] = currentRight.GetComponent<HandJoint>();
-            }
-
-        }
-
-
-        Transform NetworkLeftHand = transform.Find("Armature/Hips/Spine/Spine1/Spine2/LeftShoulder/LeftArm/LeftForeArm/LeftHand");
-        Transform NetworkRightHand = transform.Find("Armature/Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand");
-
-        currentLeft = NetworkLeftHand;
-        for (int i = 0; i < 5; i++)
-        {
-            currentLeft = NetworkLeftHand.GetChild(i);
-            NetworkLeftHandJoints[i * 4] = currentLeft.GetComponent<HandJoint>();
-            for (int j = 1; j < 4; j++)
-            {
-                currentLeft = currentLeft.GetChild(0);
-                int num = i * 4 + j;
-                NetworkLeftHandJoints[num] = currentLeft.GetComponent<HandJoint>();
-            }
-
-        }
-        currentRight = NetworkRightHand;
-        for (int i = 0; i < 5; i++)
-        {
-            currentRight = NetworkRightHand.GetChild(i);
-            NetworkRightHandJoints[i * 4] = currentRight.GetComponent<HandJoint>();
-            for (int j = 1; j < 4; j++)
-            {
-                currentRight = currentRight.GetChild(0);
-                int num = i * 4 + j;
-                NetworkRightHandJoints[num] = currentRight.GetComponent<HandJoint>();
-            }
-
-        }
         if (isLocalPlayer)
         {
             foreach (var item in GetComponentsInChildren<Renderer>())
@@ -140,16 +77,6 @@ public class NetworkAvatar : NetworkBehaviour
 
             transform.position = LocalAvatar.transform.position;
             transform.forward = LocalAvatar.transform.forward;
-
-            for (int i = 0; i < 20; i++)
-            {
-                MapTransform(NetworkLeftHandJoints[i].GetTransform(), LocalLeftHandJoints[i].GetTransform());
-            }
-            for (int i = 0; i < 20; i++)
-            {
-                MapTransform(NetworkRightHandJoints[i].GetTransform(), LocalRightHandJoints[i].GetTransform());
-            }
-
             syncAnimator(NetworkAnimator, LocalAnimator);
         }
     }

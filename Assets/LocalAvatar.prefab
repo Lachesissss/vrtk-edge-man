@@ -3571,7 +3571,7 @@ GameObject:
   - component: {fileID: 6404163566285001403}
   - component: {fileID: 1731117225686191289}
   - component: {fileID: 1731117225686191290}
-  - component: {fileID: 2463075777801668908}
+  - component: {fileID: 69857805}
   m_Layer: 0
   m_Name: LocalAvatar
   m_TagString: LocalAvatar
@@ -3826,7 +3826,7 @@ MonoBehaviour:
   animator: {fileID: 1731117225686191295}
   ThumbStickMoveX: 0
   ThumbStickMoveY: 0
---- !u!114 &2463075777801668908
+--- !u!114 &69857805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3839,10 +3839,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LeftHandPos:
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -3886,10 +3882,6 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 0, z: 0}
   LeftHandRot:
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
@@ -3912,15 +3904,7 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
   RightHandRot:
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
-  - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}
   - {x: 0, y: 0, z: 0, w: 0}

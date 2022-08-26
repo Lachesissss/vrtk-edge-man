@@ -442,6 +442,17 @@ Transform:
   m_Father: {fileID: 979893316}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &69857805 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 69857805, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+  m_PrefabInstance: {fileID: 543731990645404370}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 813156f58b319f245b97262f65524760, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &74931418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2016,7 +2027,6 @@ GameObject:
   - component: {fileID: 861331570}
   - component: {fileID: 861331569}
   - component: {fileID: 861331571}
-  - component: {fileID: 861331572}
   m_Layer: 0
   m_Name: NetworkManager
   m_TagString: Untagged
@@ -2094,10 +2104,10 @@ MonoBehaviour:
   playerSpawnMethod: 1
   spawnPrefabs:
   - {fileID: 6668795438807886235, guid: 3a39d2d47d65e124db108532de590c23, type: 3}
-  - {fileID: 7182957554974964375, guid: 5c69a79be2be7c640a92670f265aa8af, type: 3}
+  - {fileID: 3502454035802124107, guid: 3afe86ec7b7d8fb4c8b4af53102e7944, type: 3}
   leftPlayerSpawn: {fileID: 2052913551}
   rightPlayerSpawn: {fileID: 97172541}
-  player1: {fileID: 7182957554974964375, guid: 5c69a79be2be7c640a92670f265aa8af, type: 3}
+  player1: {fileID: 3502454035802124107, guid: 3afe86ec7b7d8fb4c8b4af53102e7944, type: 3}
   player2: {fileID: 4509206449891082777, guid: 5116786ef09b8254b9523f7a25cbe247, type: 3}
 --- !u!114 &861331571
 MonoBehaviour:
@@ -2113,18 +2123,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offsetX: 0
   offsetY: 0
---- !u!114 &861331572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861331567}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6213fb12e1c3a54c8d9523319968c3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &879365070
 GameObject:
   m_ObjectHideFlags: 0
@@ -3405,17 +3403,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 114b3c3ce4645364a97c8f0803bed65b, type: 3}
---- !u!114 &1366539651 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2463075777801668908, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
-  m_PrefabInstance: {fileID: 543731990645404370}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813156f58b319f245b97262f65524760, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1387161111
 GameObject:
   m_ObjectHideFlags: 0
@@ -4349,6 +4336,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 69857805, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: LeftHandCtrl
+      value: 
+      objectReference: {fileID: 7874183890441871158}
+    - target: {fileID: 69857805, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
+      propertyPath: RightHandCtrl
+      value: 
+      objectReference: {fileID: 9153055571298861890}
     - target: {fileID: 1731117225686191282, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
       propertyPath: m_Name
       value: LocalAvatar
@@ -4397,14 +4392,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2463075777801668908, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
-      propertyPath: LeftHandCtrl
-      value: 
-      objectReference: {fileID: 7874183890441871158}
-    - target: {fileID: 2463075777801668908, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
-      propertyPath: RightHandCtrl
-      value: 
-      objectReference: {fileID: 9153055571298861890}
     - target: {fileID: 6404163566285001403, guid: d252c75d64991bc4d822ddc29a0cac3f, type: 3}
       propertyPath: head.vrTarget
       value: 
@@ -4696,7 +4683,7 @@ MonoBehaviour:
   VRJointsPose:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1366539651}
+      - m_Target: {fileID: 69857805}
         m_TargetAssemblyTypeName: HandTrackingAnimation, Assembly-CSharp
         m_MethodName: UpdateHandTrackingMsg
         m_Mode: 0
