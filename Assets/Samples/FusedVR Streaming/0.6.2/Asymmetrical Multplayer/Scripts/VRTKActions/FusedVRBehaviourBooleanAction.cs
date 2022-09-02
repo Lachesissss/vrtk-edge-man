@@ -47,11 +47,11 @@
 
         public void OnRemoteUpdateFromHandTracking(Hand hand, HandTrackingBoolEventType Event, bool Enabled)
         {
-            Debug.Log(hand.ToString() + ' ' + Event.ToString());
+            //Debug.Log(hand.ToString() + ' ' + Event.ToString());
             if (hand == myHand && Event == myHandTrackingBoolEventType)
             {
                 Receive(Enabled); // if my hand & button is pressed, then send data to VRTK
-                Debug.Log("Receive Fist:" + Enabled);
+                //Debug.Log("Receive Fist:" + Enabled);
             }
         }
     }

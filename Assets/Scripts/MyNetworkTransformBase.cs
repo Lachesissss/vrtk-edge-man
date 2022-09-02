@@ -87,9 +87,9 @@ namespace Mirror
         public float bufferResetMultiplier = 5;
 
         [Header("Sensitivity"), Tooltip("Sensitivity of changes needed before an updated state is sent over the network")]
-        public float positionSensitivity = 0.01f;
-        public float rotationSensitivity = 0.01f;
-        public float scaleSensitivity = 0.01f;
+        private float positionSensitivity = 0.001f;
+        private float rotationSensitivity = 0.001f;
+        private float scaleSensitivity = 0.001f;
 
         protected bool positionChanged;
         protected bool rotationChanged;

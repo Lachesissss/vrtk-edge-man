@@ -56,7 +56,8 @@ public class Move : MonoBehaviour
         Transform HeadCamera = transform.Find("Head");
         Quaternion headYaw = Quaternion.Euler(0, HeadCamera.eulerAngles.y, 0);
 
-        direction = headYaw * new Vector3(ThumbStickMoveX, 0f, -ThumbStickMoveY);
+        //direction = headYaw * new Vector3(ThumbStickMoveX, 0f, -ThumbStickMoveY);
+        direction = new Vector3(ThumbStickMoveX, 0f, -ThumbStickMoveY);
         /*
         if (LocalAvatar.position.y+footOffset.y > 0.017)
         {

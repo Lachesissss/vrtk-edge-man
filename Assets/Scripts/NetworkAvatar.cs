@@ -145,7 +145,7 @@ public class NetworkAvatar : NetworkBehaviour
         }
     }
 
-    public void OnSelectGrabbable(NetworkIdentity networkIdentity)
+    public void OnRequestAuthority(NetworkIdentity networkIdentity)
     {
         if (networkIdentity != null && !networkIdentity.hasAuthority)
         {
@@ -156,19 +156,59 @@ public class NetworkAvatar : NetworkBehaviour
     [Command]
     public void CmdRequestAuthority(NetworkIdentity identity)
     {
-        ResetTrans();
+        RpcResetTrans();
         identity.RemoveClientAuthority();
         identity.AssignClientAuthority(connectionToClient);
         Debug.Log("Assign finished!");
     }
 
-    [ClientRpc]
-    public void ResetTrans()
+    public bool OnRequestButtonMove(GameObject puck, ButtonEvents.ButtonId buttonId)
     {
-        GameObject.FindGameObjectWithTag("NetworkAvatar").GetComponent<NetworkTransform>().Reset();
-        GameObject.FindGameObjectWithTag("NetworkAvatar").GetComponent<NetworkTransformChild>().Reset();
-        GameObject.FindGameObjectWithTag("NetworkObject").GetComponent<NetworkTransform>().Reset();
+        NetworkIdentity identity = puck.GetComponent<NetworkIdentity>();
+        if (identity != null)
+        {
+            if (!identity.hasAuthority)
+            {
+                CmdRequestButtonMove(puck, buttonId);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        return false;
     }
+
+    [Command]
+    public void CmdRequestButtonMove(GameObject puck, ButtonEvents.ButtonId buttonId)
+    {
+        RpcResetTrans();
+        NetworkIdentity identity = puck.GetComponent<NetworkIdentity>();
+        identity.RemoveClientAuthority();
+        identity.AssignClientAuthority(connectionToClient);
+        Debug.Log("Assign Move Finished");
+    }
+
+    [ClientRpc]
+    public void RpcResetTrans()
+    {
+        GameObject[] networkAvatars = GameObject.FindGameObjectsWithTag("NetworkAvatar");
+        foreach (var networkAvatar in networkAvatars)
+        {
+            networkAvatar.GetComponent<NetworkTransform>()?.Reset();
+            networkAvatar.GetComponent<NetworkTransformChild>()?.Reset();
+            networkAvatar.GetComponent<MyNetworkTransformChild>()?.Reset();
+        }
+
+        GameObject[] networkObjects = GameObject.FindGameObjectsWithTag("NetworkObject");
+        foreach (var networkObject in networkObjects)
+        {
+            networkObject.GetComponent<NetworkTransform>()?.Reset();
+            networkObject.GetComponent<NetworkTransformChild>()?.Reset();
+        }
+    }
+
 
     private void syncAnimator(Animator NetworkAnimator, Animator LocalAnimator)  //将LocalAvatar动画同步到NetworkAvatar
     {
