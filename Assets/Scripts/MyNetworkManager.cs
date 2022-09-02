@@ -1,14 +1,14 @@
 using UnityEngine;
 using Mirror;
 
-
 public class MyNetworkManager : NetworkManager
 {
     public Transform leftPlayerSpawn;
     public Transform rightPlayerSpawn;
     public GameObject player1;
     public GameObject player2;
-    GameObject item;
+    private GameObject item;
+    private GameObject itemDisplayer;
 
     public override void OnServerAddPlayer(NetworkConnectionToClient conn)
     {
@@ -22,6 +22,9 @@ public class MyNetworkManager : NetworkManager
 
         Vector3 puckPos = new Vector3(-16.6760006f, -1.25760007f, 49.4840012f);
         Quaternion puckRot = Quaternion.Euler(0, 234.388916f, 0);
+
+        Vector3 itemDisplayerPos = new Vector3(-22.5359993f, -1.91600001f, 46.9720001f);
+        Quaternion itemDisplayerRot = Quaternion.Euler(0, 0, 0);
 
         if (numPlayers == 0)
         {
@@ -38,6 +41,9 @@ public class MyNetworkManager : NetworkManager
 
             item = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "Paddle2"), paddle2Pos, paddle2Rot);
             NetworkServer.Spawn(item, conn);
+
+            itemDisplayer = Instantiate(spawnPrefabs.Find(prefab => prefab.name == "ItemDisplayer"), itemDisplayerPos, itemDisplayerRot);
+            NetworkServer.Spawn(itemDisplayer, conn);
         }
         if (numPlayers == 2)
         {
