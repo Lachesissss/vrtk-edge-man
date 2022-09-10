@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Mirror;
-using UnityEngine.XR;
+using UnityEngine;
 
 
 public class NetworkAvatar : NetworkBehaviour
@@ -162,87 +159,7 @@ public class NetworkAvatar : NetworkBehaviour
         Debug.Log("Assign finished!");
     }
 
-    public bool OnRequestButtonMove(GameObject puck, ButtonEvents.ButtonId buttonId)
-    {
-        NetworkIdentity identity = puck.GetComponent<NetworkIdentity>();
-        if (identity != null)
-        {
-            if (!identity.hasAuthority)
-            {
-                CmdRequestButtonMove(puck, buttonId);
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-        return false;
-    }
 
-    [Command]
-    public void CmdRequestButtonMove(GameObject puck, ButtonEvents.ButtonId buttonId)
-    {
-
-        NetworkIdentity identity = puck.GetComponent<NetworkIdentity>();
-        identity.RemoveClientAuthority();
-        identity.AssignClientAuthority(connectionToClient);
-        Debug.Log("Assign Move Finished");
-
-        RpcResetTrans();
-        TargetButtonMove(buttonId);
-        RpcResetTrans();
-    }
-
-    [TargetRpc]
-    public void TargetButtonMove(ButtonEvents.ButtonId buttonId)
-    {
-        GameObject puck = GameObject.Find("Puck(Clone)");
-        if (buttonId == ButtonEvents.ButtonId.LeftButton)
-        {
-            puck.transform.position = ButtonEvents.leftPuckInitPos;
-            Debug.Log("Move Puck with LeftButton");
-        }
-        else
-        {
-            puck.transform.position = ButtonEvents.rightPuckInitPos;
-            Debug.Log("Move Puck with RightButton");
-        }
-        puck.transform.rotation = ButtonEvents.puckInitRot;
-    }
-
-    [ClientRpc]
-    public void RpcButtonMove(GameObject puck, ButtonEvents.ButtonId buttonId)
-    {
-        if (isLocalPlayer)
-        {
-            Debug.Log("isLocalPlayer");
-            NetworkIdentity identity = puck.GetComponent<NetworkIdentity>();
-
-            if (identity.hasAuthority)
-            {
-                if (buttonId == ButtonEvents.ButtonId.LeftButton)
-                {
-                    puck.transform.position = ButtonEvents.leftPuckInitPos;
-                    Debug.Log("Move Puck with LeftButton");
-                }
-                else
-                {
-                    puck.transform.position = ButtonEvents.rightPuckInitPos;
-                    Debug.Log("Move Puck with RightButton");
-                }
-                puck.transform.rotation = ButtonEvents.puckInitRot;
-            }
-            else
-            {
-                Debug.Log("Client doesn't have authority for puck");
-            }
-        }
-        else
-        {
-            Debug.Log("notLocalPlayer");
-        }
-    }
 
     [ClientRpc]
     public void RpcResetTrans()
